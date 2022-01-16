@@ -1,0 +1,80 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Friday, January 14, 2022 5:18:27 PM
+   Source : z:\SCRIPTS\
+     Dest : F:\SCRIPTS\
+
+    Files : *.*
+	    
+ Exc Dirs : Temp
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /PURGE /MIR /NP /XJ /MT:8 /R:3 /W:30 
+
+------------------------------------------------------------------------------
+
+	  *EXTRA File 		   31242	F:\SCRIPTS\PowerCopy.ps1
+	  *EXTRA File 		     118	F:\SCRIPTS\PowerRoboCopy.ps1
+	  *EXTRA File 		      85	F:\SCRIPTS\PowerRoboCopy_Test.ps1
+	  *EXTRA File 		    3735	F:\SCRIPTS\RCOPY_1.PS1
+	    New File  		    2610	z:\SCRIPTS\backup.ps1
+	    New File  		    2610	z:\SCRIPTS\robobackup.ps1
+	    New File  		    3213	z:\SCRIPTS\Misc\Get-uddBolg (2).ps1
+	    New File  		    3213	z:\SCRIPTS\Misc\Get-uddBolg.ps1
+	    New File  		     493	z:\SCRIPTS\Misc\HelloDashboard (2).ps1
+	    New File  		     493	z:\SCRIPTS\Misc\HelloDashboard.ps1
+	    New File  		     122	z:\SCRIPTS\Misc\IP_Addresses (2).csv
+	    New File  		     122	z:\SCRIPTS\Misc\IP_Addresses.csv
+	    New File  		       0	z:\SCRIPTS\Misc\Set-IPAddress.ps1
+	    New File  		  140316	z:\SCRIPTS\Backup\Backup (2).log
+	    New File  		  140316	z:\SCRIPTS\Backup\Backup.log
+	    New File  		     642	z:\SCRIPTS\Backup\MSFTSale.txt
+	    New File  		    2610	z:\SCRIPTS\Backup\robobackup.ps1
+	    New File  		    1860	z:\SCRIPTS\Environment\Add-EnvPath (2).ps1
+	    New File  		    1860	z:\SCRIPTS\Environment\Add-EnvPath.ps1
+	    New File  		    1788	z:\SCRIPTS\Environment\Set-PathVariable (2).ps1
+	    New File  		    1788	z:\SCRIPTS\Environment\Set-PathVariable.ps1
+	    New File  		    1905	z:\SCRIPTS\Environment\Set-PathVariable_A (2).ps1
+	    New File  		    1905	z:\SCRIPTS\Environment\Set-PathVariable_A.ps1
+	    New File  		     112	z:\SCRIPTS\.git\config
+	    New File  		      73	z:\SCRIPTS\.git\description
+	    New File  		      23	z:\SCRIPTS\.git\HEAD
+	    New File  		    1424	z:\SCRIPTS\.git\index
+	    New File  		     478	z:\SCRIPTS\.git\hooks\applypatch-msg.sample
+	    New File  		     896	z:\SCRIPTS\.git\hooks\commit-msg.sample
+	    New File  		    4655	z:\SCRIPTS\.git\hooks\fsmonitor-watchman.sample
+	    New File  		     189	z:\SCRIPTS\.git\hooks\post-update.sample
+	    New File  		     424	z:\SCRIPTS\.git\hooks\pre-applypatch.sample
+	    New File  		    1643	z:\SCRIPTS\.git\hooks\pre-commit.sample
+	    New File  		     416	z:\SCRIPTS\.git\hooks\pre-merge-commit.sample
+	    New File  		    1374	z:\SCRIPTS\.git\hooks\pre-push.sample
+	    New File  		    4898	z:\SCRIPTS\.git\hooks\pre-rebase.sample
+	    New File  		     544	z:\SCRIPTS\.git\hooks\pre-receive.sample
+	    New File  		    1492	z:\SCRIPTS\.git\hooks\prepare-commit-msg.sample
+	    New File  		    2783	z:\SCRIPTS\.git\hooks\push-to-checkout.sample
+	    New File  		    3650	z:\SCRIPTS\.git\hooks\update.sample
+	    New File  		     240	z:\SCRIPTS\.git\info\exclude
+	    New File  		     306	z:\SCRIPTS\.git\objects\36\a3e20d4e6259054b5812a8c563ac61639a75f2
+	    New File  		     927	z:\SCRIPTS\.git\objects\41\5a6ebdf54de3762b6bd3651b52e21e69b6e986
+	    New File  		   22458	z:\SCRIPTS\.git\objects\4d\ace2bae6fea199f76dc3b45bd58409a99665e9
+	    New File  		    1135	z:\SCRIPTS\.git\objects\55\0bcb23c859c5fd4d1c20e23955b6694906df04
+	    New File  		     578	z:\SCRIPTS\.git\objects\9b\0b8efa82b522d500044780748b1484d0b22f73
+	    New File  		     107	z:\SCRIPTS\.git\objects\bf\e17c5ffe921dbe5315d4ac22c2b72c06b468ec
+	    New File  		     852	z:\SCRIPTS\.git\objects\d1\183ac27a2812c204f99c0ec55ac9234d4757a9
+	    New File  		      15	z:\SCRIPTS\.git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :        27        27         1         0         0         0
+   Files :        45        45         0         0         0         4
+   Bytes :   351.1 k   351.1 k         0         0         0    34.3 k
+   Times :   0:01:12   0:00:07                       0:00:00   0:00:00
+
+
+   Speed :              50,161 Bytes/sec.
+   Speed :               2.870 MegaBytes/min.
+   Ended : Friday, January 14, 2022 5:18:35 PM
+

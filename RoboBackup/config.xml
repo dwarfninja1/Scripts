@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <DestinationDirectory>E:\Backups</DestinationDirectory>
+  <Source Name="Documents">
+    <SourceDirectory>C:\Users\UserName\Documents</SourceDirectory>
+    <ExcludeDirectories>
+      <Dir>My Videos</Dir>
+      <Dir/>
+    </ExcludeDirectories>
+    <ExcludeFiles>
+      <File>desktop.ini</File>
+      <File/>
+    </ExcludeFiles>
+    <DestinationName>Documents</DestinationName>
+  </Source>
+  <Source Name="AppData">
+    <SourceDirectory>C:\Users\UserName\AppData</SourceDirectory>
+    <ExcludeDirectories>
+      <Dir>Application Data</Dir>
+      <Dir/>
+    </ExcludeDirectories>
+    <ExcludeFiles>
+	 <File>*.TMP</File>
+	 <File>*.tmp</File>
+      <File/>
+    </ExcludeFiles>
+    <DestinationName>AppData</DestinationName>
+  </Source>
+</Config>

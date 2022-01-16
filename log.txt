@@ -1,0 +1,25 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20220108121325
+Username: GFRASER-DESK\gfraser
+RunAs User: GFRASER-DESK\gfraser
+Configuration Name: 
+Machine: GFRASER-DESK (Microsoft Windows NT 10.0.22000.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\gfraser\.vscode\extensions\ms-vscode.powershell-2021.12.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2021.12.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\gfraser\.vscode\extensions\ms-vscode.powershell-2021.12.0\modules' -EnableConsoleRepl -StartupBanner '=====> PowerShell Integrated Console v2021.12.0 <=====
+' -LogLevel 'Normal' -LogPath 'c:\Users\gfraser\.vscode\extensions\ms-vscode.powershell-2021.12.0\logs\1641672595-66b32b13-aeca-45ad-9bdc-3f5017a1ca2f1641672408852\EditorServices.log' -SessionDetailsPath 'c:\Users\gfraser\.vscode\extensions\ms-vscode.powershell-2021.12.0\sessions\PSES-VSCode-10244-877816' -FeatureFlags @() 
+Process ID: 4392
+PSVersion: 5.1.22000.282
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22000.282
+BuildVersion: 10.0.22000.282
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+192.168.0.1 - Success
+192.168.0.255 - TimedOut
+**********************
+Windows PowerShell transcript end
+End time: 20220108121330
+**********************
