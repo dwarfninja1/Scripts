@@ -1,10 +1,9 @@
 
 # RUN CMD LINE #
-#  Get-DirStats [[-Path] <Object>] [-Only] [-Every] [-FormatNumbers] [-Total]
+#  .\Get-DirStats [[-Path] <Object>] [-Only] [-Every] [-FormatNumbers] [-Total]
 #  or
-#  Get-DirStats -LiteralPath <String[]> [-Only] [-Every] [-FormatNumbers] [-Total] 
+#  .\Get-DirStats -LiteralPath <String[]> [-Only] [-Every] [-FormatNumbers] [-Total] 
 # Get-DirStats.ps1
-# Written by Bill Stewart (bstewart@iname.com)
 
 #requires -version 2
 
@@ -92,6 +91,7 @@ begin {
         throw "Could not find the Sysinternals 'du.exe' command in the Path. Download it, copy it to a directory in your Path, and try again."
       }
     }
+    
     if ( (Get-Item $commandPath).VersionInfo.CompanyName -notmatch 'SysInternals' ) {
       throw "The file '$commandPath' is not the SysInternals version. Download it, copy it to a directory in your Path, and try again."
     }
@@ -154,10 +154,10 @@ begin {
 process {
   foreach ( $PathItem in $Path ) {
     if ( -not $FormatNumbers ) {
-      Get-DirStats $PathItem
+      Get-DirStats $PathItem | Format-Output | Write-Output  
     }
     else {
-      Get-DirStats $PathItem | Format-Output
+      Get-DirStats $PathItem | Format-Output | Write-Output
     }
   }
 }
