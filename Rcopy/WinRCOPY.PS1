@@ -1,7 +1,21 @@
 
 $src, $dst = 0
 Clear-Host
+$sourceText = @{Text = "C:\Users"} 
+$desttext = @{Text = "F:\Users"}
+
 Add-Type -AssemblyName System.Windows.Forms
+ 
+$browser = New-Object System.Windows.Forms.FolderBrowserDialog
+$null = $browser.ShowDialog()
+$sourcetext.Text = $browser.SelectedPath
+
+
+$browser = New-Object System.Windows.Forms.FolderBrowserDialog
+$null = $browser.ShowDialog()
+$desttext.Text = $browser.SelectedPath
+
+
 
 $frm = New-Object System.Windows.Forms.Form
 $frm.size = New-Object System.Drawing.Size(400, 300)
@@ -10,11 +24,10 @@ $frm.StartPosition = [System.Windows.Forms.FormStartPosition]::Manual
 
 $frm.Location = new-object System.Drawing.Point(800, 0)
 $frm.MaximizeBox = $false
+
 $lbl1 = new-object System.Windows.Forms.Label
 $lbl1.text = "Source"
-
 $lbl1.top = 50
-
 $lbl1.left = 50
 $lbl1.Width = 200
 
@@ -42,8 +55,6 @@ $copybutn.text = "Start"
 $copybutn.Width = 100
 
 
-
-
 $frm.Controls.add($lbl1)
 $frm.Controls.add($lbl2)
 $frm.Controls.add($sourcetext)
@@ -51,6 +62,7 @@ $frm.Controls.add($desttext)
 $frm.Controls.add($copybutn)
 
 $exec = {
+    $sourcetext = Find-Folders $sourcetext.text  
     if (($sourcetext.text -ne ""
     ) -and ($desttext.text -ne "")) {
         if ((test-path $sourcetext.text.ToString()) -and (test-path $desttext.text.ToString())) {
@@ -65,7 +77,7 @@ $exec = {
             $info.CreateNoWindow = $false
             $cmd1 = [System.Diagnostics.Process]::Start($info)
             $clk = [system.diagnostics.stopwatch]::startNew()
-            while (Get-Process -Name $cmd1.ProcessName -ErrorAction SilentlyContinue) { 
+            while (Get-Process -Name $cmd1.ProcessName -ErrorAction SilentlyContinue) {
                 $clksec = [math]::Round(($clk.ElapsedMilliseconds / 1000))
                 $dst = Get-ChildItem $desttext.Text -recurse -ErrorAction SilentlyContinue | Measure-Object -property length -sum
                 $dst = $dst.sum
@@ -75,12 +87,11 @@ $exec = {
                 }
                 catch
                 {}
-                $dd = "$($dd.Hours):$($dd.Minutes):$($dd.Seconds)"
+                $dd = ”$($dd.Hours):$($dd.Minutes):$($dd.Seconds)”
                 $prog = $dst / $src * 100
                 $prog = [math]::Round($prog)
-                write-host "Total $($prog) % done" -ForegroundColor Green -BackgroundColor White
-                #write-progress -Activity "copying from $($sourcetext.text) to $($desttext.text) and Estimated time left in hh:mm:ss $($dd)" -PercentComplete $prog -Status "$prog % completed"
-                write-progress -Activity "copying from $($sourcetext.text) to $($desttext.text) and Estimated time left in hh:mm:ss $($dd)" -PercentComplete $prog -Status "$prog % completed"
+                #write-host "Total $($prog) % done” -ForegroundColor Green -BackgroundColor White
+                write-progress -Activity "copying from $($sourcetext.text) to $($desttext.text) and Estimated time left in hh:mm:ss $($dd)" -PercentComplete $prog -Status "$prog % completed”
 
             }
             $clk.Stop()
@@ -88,18 +99,21 @@ $exec = {
             $frm.dispose()
         }
         else {
-#            write-host "check source or destination path"
+            write-host "check source or destination path"
             $frm.dispose()
         }
     }
     else {
-#        write-host "check source or destination path"
+        write-host "check source or destination path"
         $frm.dispose()
     }
 
 }
-$copybutn.add_click($exec)
-$rt = $frm.ShowDialog()
-$frm.Dispose()
+$srcfolder FindSrcFolders $filepath
+$destfolder FindDestFolders $filepath
 
- 
+$copybutn.add_click($exec)
+$frm.ShowDialog()
+Write-output "End Program"
+$frm.Dispose()
+exit

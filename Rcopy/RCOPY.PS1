@@ -4,6 +4,8 @@ $src, $dst = 0
 Clear-Host
 Add-Type -AssemblyName System.Windows.Forms
 
+
+
 $frm = New-Object System.Windows.Forms.Form
 $frm.size = New-Object System.Drawing.Size(400, 300)
 $frm.text = "Robocopy"
@@ -11,6 +13,7 @@ $frm.StartPosition = [System.Windows.Forms.FormStartPosition]::Manual
 
 $frm.Location = new-object System.Drawing.Point(800, 0)
 $frm.MaximizeBox = $false
+
 $lbl1 = new-object System.Windows.Forms.Label
 $lbl1.text = "Source"
 $lbl1.top = 50
@@ -48,7 +51,7 @@ $frm.Controls.add($desttext)
 $frm.Controls.add($copybutn)
 
 $exec = {
-    
+    $sourcetext = Find-Folders $sourcetext.text  
     if (($sourcetext.text -ne ""
     ) -and ($desttext.text -ne "")) {
         if ((test-path $sourcetext.text.ToString()) -and (test-path $desttext.text.ToString())) {
@@ -95,8 +98,12 @@ $exec = {
     }
 
 }
-$copybutn.add_click($exec)
-$rt = $frm.ShowDialog()
-$frm.Dispose()
+$srcfolder FindSrcFolders $filepath
+$destfolder FindDestFolders $filepath
 
+$copybutn.add_click($exec)
+$frm.ShowDialog()
+Write-output "End Program"
+$frm.Dispose()
+exit
  
